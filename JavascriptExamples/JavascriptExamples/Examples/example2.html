@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JS Eğitim Seti || Ders 42 || Uygulama 2 : Random Arkaplan Resim Değiştirme</title>
+    <style></style>
+</head>
+<body id="arka">
+
+    <img src="../images/goruntu1.jpg" id="img" width="1300" height="600" />
+
+    <script>
+        // 1 - Arkaplan Rastgele Renk Değiştirme.
+
+        /*var text;
+        function renkYarat() {
+            var a = "ABCDEF0123456789";
+            text = "#";
+
+            for (var i = 0; i < 6; i++) {
+                var random = Math.round(Math.random() * 15); //Index sıfırdan başlıyor.Stringde 16 karakter var.Bu yüzden 15.
+                text += a.charAt(random); //->string ifade içerisindeki index değeri üzerinden harf veya sayı alıyoruz.
+            }
+        }
+        setInterval(function () {
+            renkYarat();//--> Bu fonksiyon çalışıp harf ve sayılardan bir renk oluşturuyor.
+            document.getElementById("arka").style.backgroundColor = text;//->body id'si üzerinden ulaşıp,background color her 2snde değişiyor.
+
+        }, 2000);*/
+
+        //2 - Arkaplan Image Değiştirme
+        var text;
+
+        function resimSec() {
+            var a = ["goruntu1.jpg", "goruntu2.jpg", "goruntu3.jpg", "goruntu4.jpg", "goruntu5.jpg", "goruntu6.jpg"];
+            text = "../images/";
+            var random = Math.round(Math.random() * 5); //6 görüntü var.Index 0'dan başlıyor.Bu yüzden 5.
+            text += a[random];
+
+        }
+
+        setInterval(function () {
+            resimSec();
+            document.getElementById("img").src = text; // Html elementine ait src değerini sürekli olarak değiştiriyoruz.
+
+        }, 2000);
+
+
+    </script>
+
+
+</body>
+</html>

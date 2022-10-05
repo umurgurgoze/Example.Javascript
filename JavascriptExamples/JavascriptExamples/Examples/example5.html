@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JS Eğitim Seti || Ders 45 || Uygulama 5 : Geri Sayım</title>
+    <style>
+        #div1 {
+            width: 40%;
+            height: auto;
+            position: relative;
+            left: 450px;
+            top: 150px;
+        }
+
+        #saat {
+            width: 150px;
+            height: 150px;
+            background-color: white;
+            float: left;
+            margin-left: 4px;
+            font-size: 128px;
+            text-align: center;
+        }
+
+        #dakika {
+            width: 150px;
+            height: 150px;
+            background-color: white;
+            float: left;
+            margin-left: 4px;
+            font-size: 128px;
+            text-align: center;
+        }
+
+        #saniye {
+            width: 150px;
+            height: 150px;
+            background-color: white;
+            float: left;
+            margin-left: 4px;
+            font-size: 128px;
+            text-align: center;
+        }
+
+        body {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <div class="deneme" id="saat">
+
+        </div>
+        <div class="deneme" id="dakika">
+
+        </div>
+        <div class="deneme" id="saniye">
+
+        </div>
+    </div>
+    <script>
+        var saat = 0;
+        var dakika = 0;
+        var saniye = 2;
+
+        var a = setInterval(function () {
+            document.getElementById("saat").innerHTML = saat;
+            document.getElementById("dakika").innerHTML = dakika;
+            document.getElementById("saniye").innerHTML = saniye--;
+
+            if (Number(document.getElementById("saniye").innerHTML) == 0) {
+                dakika--;
+                saniye = 59;
+            }
+            if (Number(document.getElementById("dakika").innerHTML) == 0 && Number(document.getElementById("saniye").innerHTML) == 0) {
+                saat--;
+                dakika = 59;
+            }
+            if (Number(document.getElementById("saat").innerHTML) == 0 &&
+                Number(document.getElementById("dakika").innerHTML) == 0 &&
+                Number(document.getElementById("saniye").innerHTML) == 0) {
+                for (var i = 0; i < 3; i++) {
+                    document.getElementsByClassName("deneme")[i].style.backgroundColor = "red";
+                }// İşlem bitip süre sıfırlandığında kutular kırmızı oluyor.
+
+                clearInterval(a);//Interval kesilerek tamamlanıyor.
+            }
+        }, 1000);
+
+
+
+
+    </script>
+
+</body>
+</html>
